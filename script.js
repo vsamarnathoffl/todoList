@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addButton.addEventListener("click", () => {
     const textInput = todoInput.value.trim();
-    todoInput.value="";
+    todoInput.value = "";
     if (textInput === "") return;
 
     newTask = {
@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     tasks.push(newTask);
     saveTask();
     renderTask(newTask);
-
   });
 
   function renderTask(task) {
@@ -32,12 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     <span>${task.text}</span>
     <button>delete</delete>`;
 
-    if (task.completed) li.classList.add("completed");
+    if (task.completed) li.querySelector("span").classList.add("completed");
 
     li.addEventListener("click", (e) => {
       if (e.target.tagName === "BUTTON") return;
       task.completed = !task.completed;
-      li.classList.toggle("completed");
+      li.querySelector("span").classList.toggle("completed");
       saveTask();
     });
 
