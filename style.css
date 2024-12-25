@@ -79,6 +79,7 @@ span {
   margin: auto 0px;
 }
 .completed {
+  opacity: 0.8;
   text-decoration: line-through;
 }
 
